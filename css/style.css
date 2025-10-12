@@ -1,0 +1,303 @@
+/* === Import Google Font === */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+/* === Body styling === */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    min-height: 100vh;
+    display: block;       /* change from flex to block */
+    text-align: left;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header h1 {
+    font-size: 6.5em;
+    margin-bottom: 0.1em;
+    font-weight: 700;       /* bold for your name */
+    color: #ffffff;         /* pink color for the name */
+}
+
+
+header p.hello-color {
+    color: #7e7e7e;   /* gray or any color */
+    font-style: italic;
+    font-size: 1.5em;
+    margin-top: 0;    /* remove top margin */
+    margin-bottom: 0.1em; /* very small bottom margin */
+}
+
+
+
+header p {
+  margin: .5em 0; /* increased line spacing */
+  font-weight: 100;
+  font-size: 1.6em;
+  line-height: 1.6; /* smoother vertical rhythm */
+}
+
+/* Nav bar flex container */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffbcd7;
+    padding: 0.5em 2em; /* more horizontal padding for spacing */
+    box-sizing: border-box;
+    z-index: 1000;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* menu left, logo right */
+  }
+  
+  /* Collapsible menu summary ("GO") */
+  nav details summary {
+    cursor: pointer;
+    font-weight: 400;
+    color: black;
+    outline: none;
+    font-size: 1.5em;      /* make "GO" bigger */
+    margin-bottom: 0.5em;
+  }
+  
+  nav details summary::-webkit-details-marker {
+    display: none; /* remove default triangle */
+  }
+  
+  /* Logo on the right */
+  .nav-logo {
+    height: 50px;  /* bigger logo */
+    width: auto;    /* maintain aspect ratio */
+  }
+  
+
+nav ul {
+  list-style: none;
+  padding-left: 1em;
+  margin-top: 0.5em;
+}
+
+nav ul li {
+  margin: 0.7em 0;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  text-decoration: underline;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;   /* vertically center text + image */
+    justify-content: center; /* horizontally center the intro block */
+    gap: 160px;            
+    margin-top: 120px;    
+    padding: 0 40px;      
+  }
+  
+
+
+  
+.profile-img {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 9px solid #ffffff;
+    align-self: flex-end; /* pushes the image lower in the flex container */
+}
+
+.code-box {
+    background-color: rgba(255, 192, 203, 0.15);
+    border: 1px solid rgb(255, 195, 237);
+    border-radius: 12px;
+    padding: 14px 22px;
+    margin-top: 10px;
+    display: inline-block;
+    line-height: 1.5;
+    font-size: .7em;
+    box-shadow: 0 0 12px rgba(255, 182, 193, 0.25);
+    position: relative;  /* needed for header */
+    font-family: 'Google Sans Code', monospace;
+    font-weight: 300;}
+
+.code-box .code-header {
+    background-color: rgb(255, 255, 255);  /* top bar color stays */
+    color: black;
+    font-weight: 600;
+    font-size: 1.4em;
+    font-family: 'Arial', sans-serif;  /* ensures header text uses the same font */
+    padding: 4px 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin: -14px -22px 10px -22px; /* aligns with code box padding */
+}
+
+  
+  
+/* === Header Container === */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-img-container {
+    position: relative; /* needed to position the circle behind */
+    display: inline-block;
+}
+
+/* Decorative circle behind the image */
+.profile-img-container::after {
+    content: "";
+    position: absolute;
+    width: 400px;         /* size of the circle */
+    height: 400px;
+    background-color: #ffbcd7; /* pink matching border */
+    border-radius: 50%;
+    bottom: -40px;         /* moves it below the image */
+    right: -60px;          /* moves it slightly sideways to peek out */
+    z-index: -1;           /* behind the image */
+}
+
+.indented {
+    text-indent: 40px; /* moves the first line 40px to the right */
+    margin: 0.2em 0; /* reduces spacing between code lines */
+
+  }
+ 
+
+  /* === About Me Section === */
+.about-me {
+    max-width: 1200px;       /* wider container */
+    margin: 60px auto 0;     
+    padding: 20px 60px;      /* reduce vertical padding, add horizontal padding for nicer look */
+    background-color: black;  
+    border-radius: 20px;     
+    color: white;            
+    font-size: 1.3em;
+    line-height: 1.6em;      
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.about-me h2 {
+    font-size: 2em;
+    color: #ffffff;          
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-me p {
+    margin-bottom: 20px;
+}
+
+nav details summary {
+    cursor: pointer;
+    font-weight: 400;
+    color: black;
+    outline: none;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+
+    display: flex;            /* use flex for alignment */
+    align-items: center;      /* vertically center icon and text */
+    gap: 8px;                 /* space between icon and "RUN" */
+}
+
+.play-icon {
+    font-size: 1.8em;
+    color: black;
+}
+
+
+.full-width-box {
+  background-color: rgba(255, 192, 203, 0.15);
+  border: 1px solid rgb(255, 195, 237);
+  border-radius: 12px;
+  padding: 40px 40px 40px 40px;   /* increased left/right padding */
+  margin: 20px 60px;
+  box-shadow: 0 0 12px rgba(255, 182, 193, 0.25);
+  color: rgb(255, 255, 255);
+  font-family: 'Google Sans Code', monospace;
+  font-weight: 300;
+  font-size: 1.1em;
+  line-height: 1.3;
+  position: relative;  /* needed for absolute header */
+}
+
+/* Terminal-like top bar */
+.full-width-box .code-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;                  /* ensure it spans full width of the box */
+  margin: 0;                     /* remove offsets */
+  padding: 6px 12px;             /* adjust padding */
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 600;
+  font-size: 0.9em;
+  font-family: 'Arial', sans-serif;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-sizing: border-box;       /* make sure width includes padding */
+}
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-me {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .about-me h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+
+  
+/* === Responsive (Mobile Adjustments) === */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 100px 20px 0;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header h2 {
+    font-size: 1.3em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+}
+
