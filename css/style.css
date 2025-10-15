@@ -571,32 +571,13 @@ header p {
   border: 2px solid transparent;
   border-radius: 20px;
   padding: 30px;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-pink), #ff69b4, var(--primary-pink));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover {
-  border-color: var(--primary-pink);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(255, 188, 241, 0.3);
-}
-
-.project-card:hover::before {
-  opacity: 1;
-}
+/* Remove glow/popping animations on cards */
+.project-card::before { display: none; }
+.project-card:hover { border-color: inherit; transform: none; box-shadow: none; }
 
 .project-header {
   margin-bottom: 20px;
@@ -640,14 +621,9 @@ header p {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9em;
-  transition: all 0.3s ease;
 }
 
-.project-link:hover {
-  background: white;
-  color: var(--primary-pink);
-  transform: scale(1.05);
-}
+.project-link:hover { background: white; color: var(--primary-pink); transform: none; }
 
 .project-link .material-icons {
   font-size: 1.2em;
