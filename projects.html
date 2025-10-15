@@ -3,10 +3,13 @@
 
 
 <head>
+  <!-- meta tags for responsiveness -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Leah Kang's Projects - Portfolio">
+  
+  <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
@@ -17,7 +20,10 @@
 
 
 <body>
+<!-- skip link for accessibility -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- main navigation menu -->
 <nav aria-label="Main navigation">
   <details id="run-section">
     <summary>
@@ -32,6 +38,7 @@
     </ul>
   </details>
   
+  <!-- logo -->
   <a href="index.html" aria-label="Home">
     <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
   </a></nav>
@@ -39,14 +46,17 @@
  
  
             
+  <!-- main content -->
   <main id="main-content">
   <div class="about-me">
     <h1><strong>Projects.</strong></h1>
     <hr class="about-line">
 
+    <!-- projects grid  -->
     <div class="projects-container">
       <div class="projects-grid">
         
+        <!-- mochaminds project -->
         <div class="project-card">
           <div class="project-header">
             <h2>MochaMinds</h2>
@@ -61,6 +71,7 @@
           </div>
         </div>
 
+        <!-- pdfrag project -->
         <div class="project-card">
           <div class="project-header">
             <h2>pdfRAG</h2>
@@ -75,6 +86,7 @@
           </div>
         </div>
 
+        <!-- airbnb evaluator project -->
         <div class="project-card">
           <div class="project-header">
             <h2>Airbnb Evaluator</h2>
@@ -89,6 +101,7 @@
           </div>
         </div>
 
+        <!-- sp500 forecaster project -->
         <div class="project-card">
           <div class="project-header">
             <h2>S&P500 Forecaster</h2>
@@ -103,6 +116,7 @@
           </div>
         </div>
 
+        <!-- seoulsweets project -->
         <div class="project-card">
           <div class="project-header">
             <h2>SeoulSweets</h2>
@@ -117,6 +131,7 @@
           </div>
         </div>
 
+        <!-- anteatercrawler project -->
         <div class="project-card">
           <div class="project-header">
             <h2>AnteaterCrawler</h2>
@@ -140,9 +155,11 @@
 
 
 
+  <!-- JavaScript for nav -->
   <script>
     const runMenu = document.querySelector("nav details");
   
+    // close menu when clicking outside of it
     document.addEventListener("click", (event) => {
       if (runMenu.open && !runMenu.contains(event.target)) {
         runMenu.open = false;
@@ -150,6 +167,7 @@
     });
   </script>
 
+  <!-- footer with name and sitemap link -->
   <footer>
     <p>2025 Leah Yunjung Kang • <a href="sitemap.html">Site map</a></p>
   </footer>

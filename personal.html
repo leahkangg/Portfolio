@@ -3,10 +3,13 @@
 
 
 <head>
+  <!-- meta tags for responsiveness -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Leah Kang's Personal Page - Portfolio">
+  
+  <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
@@ -17,7 +20,10 @@
 
 
 <body>
+<!-- skip link for accessibility -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- main navigation menu -->
 <nav aria-label="Main navigation">
   <details id="run-section">
     <summary>
@@ -32,6 +38,7 @@
     </ul>
   </details>
   
+  <!-- logo -->
   <a href="index.html" aria-label="Home">
     <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
   </a></nav>
@@ -39,6 +46,7 @@
  
  
             
+  <!-- main content -->
   <main id="main-content">
   <div class="about-me">
     <h1><strong>Personal.</strong></h1>
@@ -48,9 +56,11 @@
       <div class="about-text-content">
         <div class="personal-content">
           
+          <!-- hobbies section with 2x2 grid -->
           <div class="hobbies-section">
             <h2>Hobbies</h2>
             <div class="hobbies-grid-2x2">
+              <!-- graphic design  -->
               <div class="hobby-card">
                 <h3>Graphic Design</h3>
                 <p>creating digital art and visual designs using Adobe Illustrator. focused on aestheticizing personal interests and typography.</p>
@@ -58,6 +68,8 @@
                   <img src="images/monogram.svg" alt="Monogram graphic design work.">
                 </div>
               </div>
+              
+              <!-- watercoloring  -->
               <div class="hobby-card">
                 <h3>Watercoloring</h3>
                 <p>realistic watercoloring on gifting cards, bookmarks, and more.</p>
@@ -65,6 +77,8 @@
                   <img src="images/watercolor.png" alt="Watercolor art of an eight ball and clovers.">
                 </div>
               </div>
+              
+              <!-- sliming  -->
               <div class="hobby-card">
                 <h3>Sliming</h3>
                 <p>making and playing with slime for sensory enjoyment.</p>
@@ -72,6 +86,8 @@
                   <img src="images/slime.jpg" alt="Pink slime.">
                 </div>
               </div>
+              
+              <!-- cafe hopping  -->
               <div class="hobby-card">
                 <h3>Cafe Hopping</h3>
                 <p>exploring local cafes, trying new coffees/drinks, and spending time with friends/studying.</p>
@@ -93,9 +109,11 @@
   
 
 
+  <!-- JavaScript for nav -->
   <script>
     const runMenu = document.querySelector("nav details");
   
+    // close menu when clicking outside of it
     document.addEventListener("click", (event) => {
       if (runMenu.open && !runMenu.contains(event.target)) {
         runMenu.open = false;
@@ -103,6 +121,7 @@
     });
   </script>
 
+  <!-- footer with name and sitemap link -->
   <footer>
     <p>2025 Leah Yunjung Kang • <a href="sitemap.html">Site map</a></p>
   </footer>

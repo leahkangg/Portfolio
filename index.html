@@ -7,10 +7,13 @@ EMAIL: leahyk@uci.edu
 -->
 
 <head>
+  <!-- meta tags for responsiveness -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Leah Kang's Portfolio - Informatics Student">
+  
+  <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
@@ -22,7 +25,10 @@ EMAIL: leahyk@uci.edu
 
 
 <body>
+<!-- skip link for accessibility -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- main navigation menu -->
 <nav aria-label="Main navigation">
   <details id="run-section">
     <summary>
@@ -37,12 +43,14 @@ EMAIL: leahyk@uci.edu
     </ul>
   </details>
   
+  <!-- logo -->
   <a href="index.html" aria-label="Home">
     <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
   </a></nav>
 
  
  
+  <!-- main content -->
   <main id="main-content">
   <div class="intro-container">
     <header>
@@ -53,8 +61,8 @@ EMAIL: leahyk@uci.edu
         welcome to my digital portfolio
       </p>
       
-      
-            <div class="code-box">
+      <!-- code snippet with explore link -->
+      <div class="code-box">
         <div class="code-header">python3</div>
         <span class="hello-color"><em># hello there! </em></span>
         <p><span class="code-keyword">if</span> <span class="code-variable">your_interest</span> <span class="code-keyword">in</span> [ </p>
@@ -71,6 +79,7 @@ EMAIL: leahyk@uci.edu
       </div>
       </header>
     
+    <!-- progile image with pink background -->
     <div class="profile-img-container">
       <img src="images/self.jpg" alt="Leah Kang standing and smiling at a beach." class="profile-img">
     </div>
@@ -81,22 +90,26 @@ EMAIL: leahyk@uci.edu
 
   
 
+  <!-- JavaScript for nav -->
   <script>
     const exploreLink = document.getElementById("explore-link");
     const runMenu = document.querySelector("nav details");
   
+    // open navigation menu when explore button is clicked
     exploreLink.addEventListener("click", () => {
       runMenu.open = true;
-  
       runMenu.scrollIntoView({ behavior: "smooth", block: "start" });
     });
-  document.addEventListener("click", (event) => {
-    if (runMenu.open && !runMenu.contains(event.target) && event.target !== exploreLink) {
-      runMenu.open = false;
-    }
-  });
+    
+    // close  menu when clicking outside of it
+    document.addEventListener("click", (event) => {
+      if (runMenu.open && !runMenu.contains(event.target) && event.target !== exploreLink) {
+        runMenu.open = false;
+      }
+    });
   </script>
 
+  <!-- footer with name and sitemap link -->
   <footer>
     <p>2025 Leah Yunjung Kang • <a href="sitemap.html">Site map</a></p>
   </footer>

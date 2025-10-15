@@ -3,10 +3,13 @@
 
 
 <head>
+  <!-- meta tags for responsiveness -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Contact Leah Kang - Portfolio">
+  
+  <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
@@ -17,7 +20,10 @@
 
 
 <body>
+<!-- skip link for accessibility -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- main navigation menu -->
 <nav aria-label="Main navigation">
   <details id="run-section">
     <summary>
@@ -32,6 +38,7 @@
     </ul>
   </details>
   
+  <!-- logo -->
   <a href="index.html" aria-label="Home">
     <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
   </a></nav>
@@ -39,6 +46,7 @@
  
  
             
+  <!-- main content -->
   <main id="main-content">
   <div class="about-me">
     <h1><strong>Contact.</strong></h1>
@@ -48,9 +56,11 @@
       <div class="about-text-content">
         <div class="personal-content">
           
+          <!-- contact information grid -->
           <div class="contact-section">
             <h2>Get In Touch</h2>
             <div class="contact-grid">
+              <!-- email contact -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <span class="material-icons">email</span>
@@ -59,6 +69,7 @@
                 <a href="mailto:leahyk@uci.edu" class="contact-link" aria-label="Send email to Leah Kang">Send Email</a>
               </div>
               
+              <!-- linkedin contact -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <span class="material-icons">work</span>
@@ -67,6 +78,7 @@
                 <a href="https://linkedin.com/in/leahkang" target="_blank" class="contact-link" aria-label="View Leah Kang's LinkedIn profile">View Profile</a>
               </div>
               
+              <!-- github contact -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <span class="material-icons">code</span>
@@ -75,6 +87,7 @@
                 <a href="https://github.com/leahkangg" target="_blank" class="contact-link" aria-label="View Leah Kang's GitHub repositories">View Repositories</a>
               </div>
               
+              <!-- instagram contact -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <span class="material-icons">photo_camera</span>
@@ -83,6 +96,7 @@
                 <a href="https://instagram.com/leahkangg" target="_blank" class="contact-link" aria-label="Follow Leah Kang on Instagram">Follow Me</a>
               </div>
               
+              <!-- x contact -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <span class="material-icons">chat</span>
@@ -103,9 +117,11 @@
   
 
 
+  <!-- JavaScript for nav -->
   <script>
     const runMenu = document.querySelector("nav details");
   
+    // close menu when clicking outside of it
     document.addEventListener("click", (event) => {
       if (runMenu.open && !runMenu.contains(event.target)) {
         runMenu.open = false;
@@ -113,6 +129,7 @@
     });
   </script>
 
+  <!-- footer with name and sitemap link -->
   <footer>
     <p>2025 Leah Yunjung Kang • <a href="sitemap.html">Site map</a></p>
   </footer>
