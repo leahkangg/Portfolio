@@ -158,7 +158,7 @@ header h1 {
 
 
 
-header p.hello-color {
+header .hello-color {
   color: var(--text-gray);
   font-style: italic;
   font-size: 1.5em;
