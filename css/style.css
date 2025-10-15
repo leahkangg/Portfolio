@@ -263,12 +263,12 @@ header p {
 .profile-img-container::after {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 360px;
+  height: 360px;
   background-color: var(--primary-pink);
   border-radius: 50%;
-  bottom: -40px;
-  right: -60px;
+  bottom: -30px;
+  right: -50px;
   z-index: -1;
 }
 
@@ -768,6 +768,13 @@ header p {
     width: 380px;
     height: 380px;
   }
+  /* Make pink circle peek proportionally under smaller image */
+  .profile-img-container::after {
+    width: 340px;
+    height: 340px;
+    bottom: -30px;
+    right: -45px;
+  }
 }
 
 @media (max-width: 992px) and (min-width: 769px) {
@@ -783,6 +790,13 @@ header p {
   .profile-img {
     width: 320px;
     height: 320px;
+  }
+  /* Adjust pink circle to match 320px image scale */
+  .profile-img-container::after {
+    width: 280px;
+    height: 280px;
+    bottom: -25px;
+    right: -35px;
   }
   
   .about-me {
