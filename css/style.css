@@ -1,80 +1,111 @@
-/* === Import Google Font === */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
 
-/* === Body styling === */
+:root {
+  --primary-pink: #ffbcf1;
+  --text-white: #ffffff;
+  --text-gray: #7e7e7e;
+  --bg-black: black;
+  --code-bg: rgba(255, 192, 203, 0.15);
+  --code-border: rgb(255, 195, 237);
+  --code-shadow: rgba(255, 182, 193, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a:focus,
+button:focus,
+summary:focus {
+  outline: 2px solid var(--primary-pink);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  nav ul li a {
+    padding: 10px 15px;
+    font-size: 1.1em;
+  }
+  
+  nav details summary {
+    padding: 10px;
+  }
+  
+  .play-icon {
+    font-size: 2em;
+  }
+}
+
 body {
-    background-color: black;
-    color: white;
+  background-color: var(--bg-black);
+  color: var(--text-white);
     font-family: 'Manrope', sans-serif;
     font-weight: 300;
     margin: 0;
     min-height: 100vh;
-    display: block;       /* change from flex to block */
     text-align: left;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 120px;
 }
 
-
-header h1 {
-    font-size: 6.5em;
-    margin-bottom: 0.1em;
-    font-weight: 700;       /* bold for your name */
-    color: #ffffff;         /* pink color for the name */
+footer {
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+  color: var(--text-white);
+  opacity: 0.9;
+  margin-top: 80px;
 }
 
-
-header p.hello-color {
-    color: #7e7e7e;   /* gray or any color */
-    font-style: italic;
-    font-size: 1.5em;
-    margin-top: 0;    /* remove top margin */
-    margin-bottom: 0.1em; /* very small bottom margin */
+footer p {
+  margin: 0;
+  font-size: 0.95em;
 }
 
-
-
-header p {
-  margin: .5em 0; /* increased line spacing */
-  font-weight: 100;
-  font-size: 1.6em;
-  line-height: 1.6; /* smoother vertical rhythm */
-}
-
-/* Nav bar flex container */
 nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffbcd7;
-    padding: 0.5em 2em; /* more horizontal padding for spacing */
-    box-sizing: border-box;
+  background: var(--primary-pink);
+  padding: 0.5em 2em;
     z-index: 1000;
-    
     display: flex;
     align-items: center;
-    justify-content: space-between; /* menu left, logo right */
+  justify-content: space-between;
   }
   
-  /* Collapsible menu summary ("GO") */
+
   nav details summary {
     cursor: pointer;
     font-weight: 400;
-    color: black;
+  color: var(--bg-black);
     outline: none;
-    font-size: 1.5em;      /* make "GO" bigger */
+  font-size: 1.5em;
     margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   }
   
   nav details summary::-webkit-details-marker {
-    display: none; /* remove default triangle */
+  display: none;
   }
   
-  /* Logo on the right */
   .nav-logo {
-    height: 50px;  /* bigger logo */
-    width: auto;    /* maintain aspect ratio */
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
   
 
@@ -89,215 +120,878 @@ nav ul li {
 }
 
 nav ul li a {
-  color: black;
+  color: var(--bg-black);
   text-decoration: none;
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.intro-container {
-    display: flex;
-    align-items: center;   /* vertically center text + image */
-    justify-content: center; /* horizontally center the intro block */
-    gap: 160px;            
-    margin-top: 120px;    
-    padding: 0 40px;      
-  }
-  
-
-
-  
-.profile-img {
-    width: 370px;
-    height: 370px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 9px solid #ffffff;
-    align-self: flex-end; /* pushes the image lower in the flex container */
+.play-icon {
+  font-size: 1.8em;
+  color: var(--bg-black);
 }
 
-.code-box {
-    background-color: rgba(255, 192, 203, 0.15);
-    border: 1px solid rgb(255, 195, 237);
-    border-radius: 12px;
-    padding: 14px 22px;
-    margin-top: 10px;
-    display: inline-block;
-    line-height: 1.5;
-    font-size: .7em;
-    box-shadow: 0 0 12px rgba(255, 182, 193, 0.25);
-    position: relative;  /* needed for header */
-    font-family: 'Google Sans Code', monospace;
-    font-weight: 300;}
-
-.code-box .code-header {
-    background-color: rgb(255, 255, 255);  /* top bar color stays */
-    color: black;
-    font-weight: 600;
-    font-size: 1.4em;
-    font-family: 'Arial', sans-serif;  /* ensures header text uses the same font */
-    padding: 4px 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin: -14px -22px 10px -22px; /* aligns with code box padding */
-}
-
-  
-  
-/* === Header Container === */
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.profile-img-container {
-    position: relative; /* needed to position the circle behind */
-    display: inline-block;
+header h1 {
+  font-size: 6em;
+  margin-bottom: 0.1em;
+  font-weight: 700;
+  color: var(--text-white);
+  background: linear-gradient(135deg, var(--text-white) 0%, var(--primary-pink) 50%, var(--text-white) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
 }
 
-/* Decorative circle behind the image */
-.profile-img-container::after {
-    content: "";
-    position: absolute;
-    width: 400px;         /* size of the circle */
-    height: 400px;
-    background-color: #ffbcd7; /* pink matching border */
-    border-radius: 50%;
-    bottom: -40px;         /* moves it below the image */
-    right: -60px;          /* moves it slightly sideways to peek out */
-    z-index: -1;           /* behind the image */
+
+
+header p.hello-color {
+  color: var(--text-gray);
+  font-style: italic;
+  font-size: 1.5em;
+  margin: 0 0 0.1em 0;
 }
 
-.indented {
-    text-indent: 40px; /* moves the first line 40px to the right */
-    margin: 0.2em 0; /* reduces spacing between code lines */
+header p {
+  margin: 0.5em 0;
+  font-weight: 100;
+  font-size: 1.6em;
+  line-height: 1.6;
+}
 
+.intro-container {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    gap: 160px;            
+  margin-top: 100px;
+  padding: 0 30px;
+}
+
+.intro-container .profile-img-container {
+  margin-right: 20px;
   }
- 
-
-  /* === About Me Section === */
-.about-me {
-    max-width: 1200px;       /* wider container */
-    margin: 60px auto 0;     
-    padding: 20px 60px;      /* reduce vertical padding, add horizontal padding for nicer look */
-    background-color: black;  
-    border-radius: 20px;     
-    color: white;            
-    font-size: 1.3em;
-    line-height: 1.6em;      
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.about-me h2 {
-    font-size: 2em;
-    color: #ffffff;          
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.about-me p {
-    margin-bottom: 20px;
-}
-
-nav details summary {
+  
+  .intro-text {
+  margin-bottom: 40px;
+    font-size: 1.6em;
+    line-height: 1.6;
+    font-weight: 100;
+  }
+  
+  .explore-link {
+  color: inherit;
+  text-decoration: none;
     cursor: pointer;
-    font-weight: 400;
-    color: black;
-    outline: none;
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-
-    display: flex;            /* use flex for alignment */
-    align-items: center;      /* vertically center icon and text */
-    gap: 8px;                 /* space between icon and "RUN" */
+  }
+  
+  .explore-link:hover {
+  color: var(--primary-pink);
+  text-decoration: none;
+  background-color: rgba(255, 188, 241, 0.1);
+  }
+  
+.profile-img {
+  width: 420px;
+  height: 420px;
+    border-radius: 50%;
+    object-fit: cover;
+  border: 9px solid var(--text-white);
+  align-self: flex-end;
 }
 
-.play-icon {
-    font-size: 1.8em;
-    color: black;
+.profile-img-container {
+  position: relative;
+  display: inline-block;
 }
 
+.profile-img-container::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: var(--primary-pink);
+  border-radius: 50%;
+  bottom: -40px;
+  right: -60px;
+  z-index: -1;
+}
+
+.code-box {
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+    border-radius: 12px;
+    padding: 14px 22px;
+    margin-top: 10px;
+    display: inline-block;
+    line-height: 1.5;
+  font-size: 0.7em;
+  box-shadow: 0 0 12px var(--code-shadow);
+  position: relative;
+    font-family: 'Google Sans Code', monospace;
+  font-weight: 300;
+  overflow: hidden;
+  min-width: 450px;
+  width: 100%;
+  max-width: 600px;
+}
+
+
+
+.code-box p {
+  margin: 0.2em 0;
+}
+
+
+.code-box .code-header {
+  background-color: var(--text-white);
+  color: var(--bg-black);
+    font-weight: 600;
+    font-size: 1.4em;
+  font-family: 'Arial', sans-serif;
+    padding: 4px 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  margin: -14px -22px 10px -22px;
+}
 
 .full-width-box {
-  background-color: rgba(255, 192, 203, 0.15);
-  border: 1px solid rgb(255, 195, 237);
-  border-radius: 12px;
-  padding: 40px 40px 40px 40px;   /* increased left/right padding */
-  margin: 20px 60px;
-  box-shadow: 0 0 12px rgba(255, 182, 193, 0.25);
-  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, var(--code-bg) 0%, rgba(255, 192, 203, 0.25) 100%);
+  border: 1px solid var(--code-border);
+  border-radius: 16px;
+  padding: 90px 20px 45px 20px; 
+  box-shadow: 0 8px 32px var(--code-shadow), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: var(--text-white);
   font-family: 'Google Sans Code', monospace;
   font-weight: 300;
-  font-size: 1.1em;
+  font-size: 0.8em;
   line-height: 1.3;
-  position: relative;  /* needed for absolute header */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Terminal-like top bar */
+
+
 .full-width-box .code-header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;                  /* ensure it spans full width of the box */
-  margin: 0;                     /* remove offsets */
-  padding: 6px 12px;             /* adjust padding */
-  background-color: rgb(255, 255, 255);
-  color: black;
+  width: 100%;
+  margin: 0;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: var(--bg-black);
   font-weight: 600;
   font-size: 0.9em;
   font-family: 'Arial', sans-serif;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  box-sizing: border-box;       /* make sure width includes padding */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.full-width-box .code-header::before {
+  content: '●';
+  color: #ff5f57;
+  font-size: 0.8em;
+}
+
+.full-width-box .code-header::after {
+  content: '● ●';
+  color: #ffbd2e;
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+.full-width-box p {
+  position: relative;
 }
 
 
 
+.code-keyword {
+  color: #ff6b9d; 
+  font-weight: 600;
+}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .about-me {
+.code-string {
+  color: #ffffff; 
+}
+
+.code-number {
+  color: #f0f0f0; /* Light gray for numbers */
+}
+
+.code-variable {
+  color: #ff69b4; /* Hot pink for variables */
+}
+
+.code-operator {
+  color: #ffd700; /* Gold for operators */
+  font-weight: bold;
+}
+
+.code-key {
+  color: #00ffff; /* Bright cyan for dictionary keys */
+  font-weight: bold;
+}
+
+.code-comment {
+  color: #90ee90; /* Light green for comments */
+  font-style: italic;
+}
+
+.code-boolean {
+  color: #ffbcf1; /* Pink for booleans */
+}
+
+
+.code-link {
+  text-decoration: none;
+}
+
+
+.indented {
+  text-indent: 40px;
+  margin: 0.2em 0;
+  }
+
+  .material-symbols-outlined.magic-icon {
+  font-size: 1.4em;
+  color: var(--primary-pink);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* === About Section === */
+.about-me {
+  max-width: 1300px;
+  margin: 100px auto 0;
+  padding: 40px 50px;
+  color: var(--text-white);
+    font-size: 1.3em;
+    line-height: 1.6em;      
+  position: relative;
+}
+
+.about-line {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-pink), transparent);
+  margin: 20px 0 70px 0;
+  border-radius: 2px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.about-me h1 {
+    font-size: 6em;
+  color: var(--text-white);
+    margin-bottom: 100px;
+    text-align: left;
+}
+
+.about-me p {
+  margin: 0;
+  max-width: 100%;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  position: relative;
+}
+
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+.about-image {
+  width: 500px;
+  height: auto;
+  border: 9px solid var(--primary-pink);
+  flex-shrink: 0;
+  border-radius: 20px;
+}
+
+.personal-content {
+  max-width: 1200px;
+  margin: 0 auto;
         padding: 20px;
+}
+
+.contact-section .personal-content {
+  padding: 20px 0;
+}
+
+.hobbies-section {
+  margin-top: -20px;
+}
+
+.hobbies-section h2 {
+  color: var(--primary-pink);
+  font-size: 2.5em;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.hobbies-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.hobby-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hobby-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+
+
+.hobby-image img[src*="slime"] {
+  object-position: bottom;
+}
+
+.hobby-image img[src*="watercolor"] {
+  object-position: top 40%;
+}
+
+.hobby-card {
+  background: linear-gradient(135deg, rgba(255, 188, 241, 0.1), rgba(255, 105, 180, 0.1));
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.hobby-card:hover {
+  box-shadow: 0 10px 30px rgba(255, 188, 241, 0.3);
+  border-color: var(--primary-pink);
+}
+
+.hobby-card h3 {
+  color: var(--primary-pink);
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hobby-card p {
+  color: #ffffff;
+  line-height: 1.6;
         font-size: 1em;
     }
 
-    .about-me h2 {
-        font-size: 1.5em;
-    }
+
+/* === Contact Page Styling === */
+.contact-section {
+  margin-bottom: 50px;
+}
+
+.contact-section h2 {
+  color: var(--primary-pink);
+  font-size: 2.5em;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-item {
+  background: linear-gradient(135deg, rgba(255, 188, 241, 0.1), rgba(255, 105, 180, 0.1));
+  border-radius: 20px;
+  padding: 30px 40px;
+  text-align: center;
+  border: 2px solid transparent;
+  width: 100%;
+  position: relative;
+}
+
+.contact-item:nth-child(5) {
+  grid-column: 1 / -1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-item:hover {
+  border-color: var(--primary-pink);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-pink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
 }
 
 
+.contact-icon .material-icons {
+  color: white;
+  font-size: 36px;
+}
 
+.contact-item h3 {
+  color: var(--primary-pink);
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-item p {
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.contact-link {
+  display: inline-block;
+  background: var(--primary-pink);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.contact-link:hover {
+  background: white;
+  color: var(--primary-pink);
+}
+
+
+/* === Responsive Design === */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .intro-container {
+    gap: 200px;
+  }
   
-/* === Responsive (Mobile Adjustments) === */
-@media (max-width: 768px) {
+  .about-me {
+    max-width: 1400px;
+  }
+  
+  .personal-content {
+    max-width: 1300px;
+  }
+}
+
+/* Medium-large screens (992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 993px) {
+  .intro-container {
+    gap: 120px;
+  }
+  
+  header h1 {
+    font-size: 6em;
+  }
+  
+  .profile-img {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+/* Medium screens (768px to 992px) */
+@media (max-width: 992px) and (min-width: 769px) {
+  .intro-container {
+    gap: 80px;
+    padding: 100px 40px 0;
+  }
+  
+  header h1 {
+    font-size: 4.5em;
+  }
+  
+  .profile-img {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .about-me {
+    padding: 30px 40px;
+  }
+  
+  .about-content {
+    gap: 30px;
+  }
+  
+  .about-image {
+    width: 400px;
+  }
+  
+  .code-box {
+    min-width: 400px;
+    max-width: 500px;
+  }
+  
+  .full-width-box {
+    padding: 80px 15px 35px 15px; /* increase top padding to clear absolute header */
+  }
+}
+
+/* Small-medium screens (576px to 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+  body { padding-bottom: 140px; }
   .intro-container {
     flex-direction: column;
-    gap: 40px;
-    padding: 100px 20px 0;
+    gap: 50px;
+    padding: 100px 30px 0;
     text-align: center;
+  }
+  /* Ensure code/header stack above image and prevent overlap */
+  header { order: 1; width: 100%; }
+  .profile-img-container { order: 2; }
+  /* Resize/reposition decorative pink circle to avoid covering code */
+  .profile-img-container::after {
+    display: block;
+    width: 260px;
+    height: 260px;
+    bottom: -20px;
+    right: -30px;
+  }
+  /* Center the code snippet and add space before image */
+  .code-box { display: block; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
+  
+  header h1 {
+    font-size: 3.5em;
   }
 
   .profile-img {
-    width: 220px;
-    height: 220px;
+    width: 320px;
+    height: 320px;
   }
-
-  header h1 {
-    font-size: 2.2em;
+  
+  .about-me {
+    padding: 25px 30px;
+    font-size: 1.1em;
   }
-
-  header h2 {
-    font-size: 1.3em;
+  
+  .about-me h1 {
+    font-size: 4em;
+    margin-bottom: 60px;
   }
-
-  header p {
-    font-size: 1em;
+  
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .about-image {
+    width: 350px;
+  }
+  
+  .code-box {
+    min-width: 350px;
+    max-width: 450px;
+    font-size: 0.75em;
+  }
+  
+  .full-width-box {
+    padding: 70px 15px 30px 15px; /* increase top padding to clear absolute header */
+    font-size: 0.85em;
+  }
+  
+  .hobbies-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .contact-item:nth-child(5) {
+    grid-column: 1;
+    max-width: 100%;
+  }
+  
+  .contact-item {
+    padding: 25px;
+    max-width: 100%;
+  }
+  
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .contact-icon .material-icons {
+    font-size: 32px;
+  }
+  
+  .contact-item h3 {
+    font-size: 1.6em;
+  }
+  
+  .contact-item p {
+    font-size: 1.1em;
   }
 }
 
+/* Small screens (up to 576px) */
+@media (max-width: 576px) {
+  body { padding-bottom: 140px; }
+  nav {
+    padding: 0.5em 1em;
+  }
+  
+  nav details summary {
+    font-size: 1.2em;
+  }
+  
+  .nav-logo {
+    height: 40px;
+  }
+  
+  .intro-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 80px 20px 0;
+    text-align: center;
+  }
+  /* Ensure proper stacking and remove overlap on very small screens */
+  header { order: 1; width: 100%; }
+  .profile-img-container { order: 2; }
+  /* Resize/reposition decorative pink circle to avoid covering code */
+  .profile-img-container::after {
+    display: block;
+    width: 230px;
+    height: 230px;
+    bottom: -15px;
+    right: -20px;
+  }
+  /* Center the code snippet and add space before image */
+  .code-box { display: block; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  .profile-img {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .about-me {
+    padding: 20px;
+    font-size: 1em;
+  }
+  
+  .about-me h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .about-image {
+    width: 280px;
+  }
+  
+  .code-box {
+    min-width: 280px;
+    max-width: 320px;
+    font-size: 0.7em;
+    padding: 12px 18px;
+  }
+  
+  .full-width-box {
+    padding: 60px 12px 25px 12px; /* increase top padding to clear absolute header */
+    font-size: 0.8em;
+  }
+  
+  .hobbies-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .hobby-card {
+    padding: 20px;
+  }
+  
+  .hobby-card h3 {
+    font-size: 1.2em;
+  }
+  
+  .hobby-card p {
+    font-size: 0.9em;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-item:nth-child(5) {
+    grid-column: 1;
+    max-width: 100%;
+  }
+  
+  .contact-item {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .contact-icon .material-icons {
+    font-size: 28px;
+  }
+  
+  .contact-item h3 {
+    font-size: 1.4em;
+  }
+  
+  .contact-item p {
+    font-size: 1em;
+  }
+  
+  .contact-link {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+  
+  .hobbies-section h2,
+  .contact-section h2 {
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Extra small screens (up to 400px) */
+@media (max-width: 400px) {
+  .intro-container {
+    padding: 70px 15px 0;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .about-me {
+    padding: 15px;
+  }
+  
+  .about-me h1 {
+    font-size: 2em;
+  }
+  
+  .about-image {
+    width: 250px;
+  }
+  
+  .code-box {
+    min-width: 250px;
+    max-width: 280px;
+    font-size: 0.65em;
+    padding: 10px 15px;
+  }
+  
+  .full-width-box {
+    padding: 55px 10px 20px 10px; /* increase top padding to clear absolute header */
+    font-size: 0.75em;
+  }
+  
+  .hobby-card {
+    padding: 15px;
+  }
+  
+  .contact-item {
+    padding: 15px;
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .contact-icon .material-icons {
+    font-size: 24px;
+  }
+  
+  .contact-item h3 {
+    font-size: 1.2em;
+  }
+  
+  .contact-link {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}

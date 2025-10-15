@@ -8,35 +8,37 @@ EMAIL: leahyk@uci.edu
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Leah Kang">
-  <meta name="description" content="Portfolio">
+  <meta name="description" content="Leah Kang's Portfolio - Informatics Student">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-  <!-- you would also link to Bootstrap here! -->
   <title>Leah Kang's Portfolio</title>
 </head>
 
 
 <body>
 <nav aria-label="Main navigation">
-  <details>
+  <details id="run-section">
     <summary>
       <span class="material-icons play-icon">play_circle_filled</span>
-      RUN
+      <b>run</b>
     </summary>
-    
-        <ul>
+    <ul>
       <li><a href="about.html">about</a></li>
       <li><a href="projects.html">projects</a></li>
       <li><a href="personal.html">personal</a></li>
       <li><a href="contact.html">contact</a></li>
     </ul>
   </details>
-  <img src="images/logo.svg" alt="Logo" class="nav-logo">
-</nav>
+  
+  <a href="index.html" aria-label="Home">
+    <img src="images/logo.svg" alt="Leah Kang's graphic logo." class="nav-logo">
+  </a></nav>
 
   
 
@@ -44,60 +46,63 @@ EMAIL: leahyk@uci.edu
     <header>
       <h1>Leah Kang.</h1>
     
-      <p> welcome to my digital portfolio</p>
-      <div class="code-box">
+      <p class="intro-text">
+        <span class="material-symbols-outlined magic-icon">wand_stars</span>
+        welcome to my digital portfolio
+      </p>
+      
+      
+            <div class="code-box">
         <div class="code-header">python3</div>
         <p class="hello-color"><em># hello there! </em></p>
-        <p>if your_interest in [ </p>
-        <p class="indented">"informatics", </p>
-        <p class="indented">"organizations and IT",</p>
-        <p class="indented">"backend software",</p>
-        <p class="indented">"design"</p>
+        <p><span class="code-keyword">if</span> <span class="code-variable">your_interest</span> <span class="code-keyword">in</span> [ </p>
+        <p class="indented"><span class="code-string">"informatics"</span>, </p>
+        <p class="indented"><span class="code-string">"organizations and IT"</span>,</p>
+        <p class="indented"><span class="code-string">"backend software"</span>,</p>
+        <p class="indented"><span class="code-string">"design"</span></p>
         <p class="indented">] :</p>
 
-        <p class="indented">explore = True</p>
-    </div>
+        <p class="indented">
+          <span id="explore-link" class="explore-link"><span class="code-variable">explore</span> = <span class="code-boolean">True</span></span>
+        </p>
+        
     
     
-      
-
+            
       </header>
     
     <div class="profile-img-container">
-      <img src="images/self.jpg" alt="Portrait of Leah Kang" class="profile-img">
+      <img src="images/self.jpg" alt="Leah Kang at a beach." class="profile-img">
     </div>
 
   </div>
 
 
-  <div class="about-code-container">
-    <div class="about-me">
-      <h2><strong>About.</strong></h2>
-      <p>I am currently a fourth year Informatics student at the University of California, Irvine. 
-        I like to focus on backend software engineering, while my artistic outlets reside in personal hobbies.
-        My programming is crafted to reflect efficiency, improvement, change and for-fun. As an
-        Informatics student, I am better able to understand the nuances of technology and information
-        sciences as a whole - the backstage efforts of requirement documentation, software design + architecture, 
-        human interaction, management and business uses, as well as the foreground of UI/UX, 
-        design and appearance.
-      </p>
-    </div>
-  
-    <div class="full-width-box">
-      <div class="code-header">python3</div>
-      <p>specialization = "organizations and IT"</p>
-      <p>year = 4</p>
-      <p>technical_skills = ["Python", "Java", "HTML/CSS", "AWS DynamoDB", "AWS API Gateways and Lambdas", "genAI", 
-        "NumPy", "Flask", "PyTorch", "Scikit-Learn", "Pandas", "Figma", "Software Design"] </p>
-      <p>hometown_city = "Irvine"</p>
-      <p>hometown_state = "CA"</p>
-      <p>mbti = "ISTP"</p>
-    </div>
-  </div>
   
 
+  <script>
+    const exploreLink = document.getElementById("explore-link");
+    const runMenu = document.querySelector("nav details");
+  
+    exploreLink.addEventListener("click", () => {
+      runMenu.open = true;
+  
+      runMenu.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  document.addEventListener("click", (event) => {
+    if (runMenu.open && !runMenu.contains(event.target) && event.target !== exploreLink) {
+      runMenu.open = false;
+    }
+  });
+  </script>
+
+  <footer>
+    <p>2025 Leah Yunjung Kang</p>
+  </footer>
 
 
+  
 
-</body>
-</html>
+
+ </body>
+ </html>

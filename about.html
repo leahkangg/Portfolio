@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leah Kang">
+  <meta name="description" content="About Leah Kang - Portfolio">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300&display=swap" rel="stylesheet">
+
+  <title>About</title>
+</head>
+
+
+<body>
+<nav aria-label="Main navigation">
+  <details id="run-section">
+    <summary>
+      <span class="material-icons play-icon">play_circle_filled</span>
+      <b>run</b>
+    </summary>
+    <ul>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="personal.html">personal</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </details>
+  
+  <a href="index.html" aria-label="Home">
+    <img src="images/logo.svg" alt="Leah Kang's graphic logo." class="nav-logo">
+  </a></nav>
+
+  
+
+            
+  <div class="about-me">
+    <h1><strong>About.</strong></h1>
+    <hr class="about-line">
+
+    <div class="about-content">
+      <img src="images/aboutpic.png" alt="Leah Kang at a greenhouse. " class="about-image">
+
+      <div class="about-text-content">
+        <p>I am currently a fourth year Informatics student at the University of California, Irvine. 
+          I like to focus on backend software engineering, while my artistic outlets reside in personal hobbies.
+          My programming is crafted to reflect efficiency, improvement, change and for-fun. As an
+          Informatics student, I am better able to understand the nuances of technology and information
+          sciences as a whole - the backstage efforts of requirement documentation, software design + architecture, 
+          human interaction, management and business uses, as well as the foreground of UI/UX, 
+          design and appearance.
+        </p>
+
+          <div class="full-width-box">
+            <div class="code-header">python3</div>
+            <p><span class="code-variable">specialization</span> = <span class="code-string">"organizations and IT"</span></p>
+            <br>
+            <p><span class="code-variable">year</span> = <span class="code-number">4</span></p>
+            <br>
+            <p><span class="code-variable">technical_skills</span> = [<span class="code-string">"Python"</span>, <span class="code-string">"Java"</span>, <span class="code-string">"HTML/CSS"</span>, <span class="code-string">"AWS DynamoDB"</span>, <span class="code-string">"AWS API Gateways and Lambdas"</span>, <span class="code-string">"genAI"</span>, 
+              <span class="code-string">"NumPy"</span>, <span class="code-string">"Flask"</span>, <span class="code-string">"PyTorch"</span>, <span class="code-string">"Scikit-Learn"</span>, <span class="code-string">"Pandas"</span>, <span class="code-string">"Figma"</span>, <span class="code-string">"Software Design"</span>]</p>
+            <br>
+            <p><span class="code-variable">city</span> = <span class="code-string">"Irvine"</span></p>
+            <br>
+            <p><span class="code-variable">mbti</span> = <span class="code-string">"ISTP"</span></p>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+ 
+
+
+  <script>
+    const runMenu = document.querySelector("nav details");
+  
+    document.addEventListener("click", (event) => {
+      if (runMenu.open && !runMenu.contains(event.target)) {
+        runMenu.open = false;
+      }
+    });
+  </script>
+
+</body>
+<footer>
+  <p>2025 Leah Yunjung Kang</p>
+</footer>
+</html>

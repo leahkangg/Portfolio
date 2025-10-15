@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leah Kang">
+  <meta name="description" content="Contact Leah Kang - Portfolio">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300&display=swap" rel="stylesheet">
+
+  <title>Contact</title>
+</head>
+
+
+<body>
+<nav aria-label="Main navigation">
+  <details id="run-section">
+    <summary>
+      <span class="material-icons play-icon">play_circle_filled</span>
+      <b>run</b>
+    </summary>
+    <ul>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="personal.html">personal</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </details>
+  
+  <a href="index.html" aria-label="Home">
+    <img src="images/logo.svg" alt="Leah Kang;s graphic logo." class="nav-logo">
+  </a></nav>
+
+  
+
+            
+  <div class="about-me">
+    <h1><strong>Contact.</strong></h1>
+    <hr class="about-line">
+
+    <div class="about-content">
+      <div class="about-text-content">
+        <div class="personal-content">
+          
+          <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <span class="material-icons">email</span>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:leahyk@uci.edu" class="contact-link" aria-label="Send email to Leah Kang">Send Email</a>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <span class="material-icons">work</span>
+                </div>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/leahkang" target="_blank" class="contact-link" aria-label="View Leah Kang's LinkedIn profile">View Profile</a>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <span class="material-icons">code</span>
+                </div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/leahkangg" target="_blank" class="contact-link" aria-label="View Leah Kang's GitHub repositories">View Repositories</a>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <span class="material-icons">photo_camera</span>
+                </div>
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/leahkangg" target="_blank" class="contact-link" aria-label="Follow Leah Kang on Instagram">Follow Me</a>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <span class="material-icons">chat</span>
+                </div>
+                <h3>X</h3>
+                <a href="https://x.com/leahkangg" target="_blank" class="contact-link" aria-label="Follow Leah Kang on X (Twitter)">Follow Me</a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+  <script>
+    const runMenu = document.querySelector("nav details");
+  
+    document.addEventListener("click", (event) => {
+      if (runMenu.open && !runMenu.contains(event.target)) {
+        runMenu.open = false;
+      }
+    });
+  </script>
+
+</body>
+<footer>
+  <p>2025 Leah Yunjung Kang</p>
+</footer>
+</html>
