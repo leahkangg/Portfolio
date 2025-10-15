@@ -263,12 +263,12 @@ header p {
 .profile-img-container::after {
   content: "";
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 420px; /* match base image size */
+  height: 420px; /* match base image size */
   background-color: var(--primary-pink);
   border-radius: 50%;
-  bottom: -30px;
-  right: -50px;
+  bottom: -24px;
+  right: -32px;
   z-index: -1;
 }
 
@@ -754,6 +754,18 @@ header p {
   .personal-content {
     max-width: 1300px;
   }
+
+  /* Keep hero image consistent; ensure circle just peeks */
+  .profile-img {
+    width: 420px;
+    height: 420px;
+  }
+  .profile-img-container::after {
+    width: 420px; /* match image */
+    height: 420px; /* match image */
+    bottom: -26px;
+    right: -36px;
+  }
 }
 
 @media (max-width: 1199px) and (min-width: 993px) {
@@ -771,10 +783,10 @@ header p {
   }
   /* Make pink circle peek proportionally under smaller image */
   .profile-img-container::after {
-    width: 340px;
-    height: 340px;
-    bottom: -30px;
-    right: -45px;
+    width: 380px; /* match image */
+    height: 380px; /* match image */
+    bottom: -22px;
+    right: -30px;
   }
 }
 
@@ -794,10 +806,10 @@ header p {
   }
   /* Adjust pink circle to match 320px image scale */
   .profile-img-container::after {
-    width: 280px;
-    height: 280px;
-    bottom: -25px;
-    right: -35px;
+    width: 320px; /* match image */
+    height: 320px; /* match image */
+    bottom: -18px;
+    right: -26px;
   }
   
   .about-me {
@@ -834,10 +846,10 @@ header p {
   .profile-img-container { order: 2; }
   .profile-img-container::after {
     display: block;
-    width: 260px;
-    height: 260px;
-    bottom: -20px;
-    right: -30px;
+    width: 300px; /* slightly smaller than image so it peeks */
+    height: 300px;
+    bottom: -16px;
+    right: -18px;
   }
   .code-box { display: block; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
   
@@ -954,10 +966,10 @@ header p {
   .profile-img-container { order: 2; }
   .profile-img-container::after {
     display: block;
-    width: 230px;
-    height: 230px;
-    bottom: -15px;
-    right: -20px;
+    width: 210px; /* smaller than image so it peeks */
+    height: 210px;
+    bottom: -12px;
+    right: -14px;
   }
   .code-box { display: block; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
 
@@ -1098,6 +1110,13 @@ header p {
     width: 180px;
     height: 180px;
   }
+  .profile-img-container::after {
+    display: block;
+    width: 150px; /* smaller than image */
+    height: 150px;
+    bottom: -8px;
+    right: -10px;
+  }
   
   .about-me {
     padding: 15px;
@@ -1156,6 +1175,13 @@ header p {
 
 /* iPhone SE and very small screens (375px and below) */
 @media (max-width: 375px) {
+  .profile-img-container::after {
+    display: block;
+    width: 140px; /* smaller than 180px image */
+    height: 140px;
+    bottom: -6px;
+    right: -8px;
+  }
   .full-width-box {
     padding: 50px 5px 15px 5px;
     font-size: 0.65em;
