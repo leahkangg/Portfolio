@@ -530,6 +530,107 @@ header p {
     }
 
 
+/* === Projects Page Styling === */
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: linear-gradient(135deg, rgba(255, 188, 241, 0.1), rgba(255, 105, 180, 0.1));
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-pink), #ff69b4, var(--primary-pink));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--primary-pink);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 188, 241, 0.3);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-header {
+  margin-bottom: 20px;
+}
+
+.project-header h3 {
+  color: var(--primary-pink);
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.project-type {
+  color: var(--text-gray);
+  font-size: 0.9em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-description {
+  color: var(--text-white);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-size: 1em;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-pink);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: white;
+  color: var(--primary-pink);
+  transform: scale(1.05);
+}
+
+.project-link .material-icons {
+  font-size: 1.2em;
+}
+
 .contact-section {
   margin-bottom: 50px;
 }
@@ -754,6 +855,15 @@ header p {
     gap: 25px;
   }
   
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .project-card {
+    padding: 25px;
+  }
+  
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -870,6 +980,19 @@ header p {
   .hobbies-grid-2x2 {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project-card {
+    padding: 20px;
+  }
+  
+  .project-header h3 {
+    font-size: 1.6em;
   }
   
   .hobby-card {
@@ -1013,5 +1136,27 @@ header p {
   
   .about-content {
     padding: 0 5px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .project-card {
+    padding: 15px;
+  }
+  
+  .project-header h3 {
+    font-size: 1.4em;
+  }
+  
+  .project-description {
+    font-size: 0.9em;
+  }
+  
+  .project-link {
+    padding: 10px 16px;
+    font-size: 0.8em;
   }
 }
