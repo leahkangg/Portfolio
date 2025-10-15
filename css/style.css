@@ -29,6 +29,12 @@ summary:focus {
   outline-offset: 2px;
 }
 
+/* Help satisfy use-of-color by adding a non-color cue */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   nav ul li a {
     padding: 10px 15px;
@@ -126,6 +132,20 @@ nav {
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
+
+/* Visually hidden utility for accessible text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 1px, 1px);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
   
 
 nav ul {
@@ -623,7 +643,7 @@ header p {
   font-size: 0.9em;
 }
 
-.project-link:hover { background: white; color: var(--primary-pink); transform: none; }
+.project-link:hover { background: white; color: var(--primary-pink); transform: none; text-decoration: underline; }
 
 .project-link .material-icons {
   font-size: 1.2em;
