@@ -603,7 +603,8 @@ header p {
   margin-bottom: 20px;
 }
 
-.project-header h3 {
+.project-header h3,
+.project-header h2 {
   color: var(--primary-pink);
   font-size: 1.8em;
   font-weight: bold;
