@@ -859,10 +859,12 @@ header p {
   }
   
   .full-width-box {
-    padding: 60px 12px 25px 12px; 
-    font-size: 0.8em;
+    padding: 60px 10px 25px 10px; 
+    font-size: 0.75em;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    max-width: 98%;
+    margin: 0 auto;
   }
   
   .hobbies-grid-2x2 {
@@ -961,10 +963,12 @@ header p {
   }
   
   .full-width-box {
-    padding: 55px 10px 20px 10px; 
-    font-size: 0.75em;
+    padding: 55px 8px 20px 8px; 
+    font-size: 0.7em;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    max-width: 95%;
+    margin: 0 auto;
   }
   
   .hobby-card {
@@ -991,5 +995,23 @@ header p {
   .contact-link {
     padding: 10px 20px;
     font-size: 0.9em;
+  }
+}
+
+/* iPhone SE and very small screens (375px and below) */
+@media (max-width: 375px) {
+  .full-width-box {
+    padding: 50px 5px 15px 5px;
+    font-size: 0.65em;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+  
+  .about-me {
+    padding: 15px 8px;
+  }
+  
+  .about-content {
+    padding: 0 5px;
   }
 }
