@@ -524,7 +524,6 @@ header p {
     }
 
 
-/* === Contact Page Styling === */
 .contact-section {
   margin-bottom: 50px;
 }
@@ -616,9 +615,7 @@ header p {
 }
 
 
-/* === Responsive Design === */
 
-/* Large screens (1200px and up) */
 @media (min-width: 1200px) {
   .intro-container {
     gap: 200px;
@@ -633,7 +630,6 @@ header p {
   }
 }
 
-/* Medium-large screens (992px to 1199px) */
 @media (max-width: 1199px) and (min-width: 993px) {
   .intro-container {
     gap: 120px;
@@ -649,7 +645,6 @@ header p {
   }
 }
 
-/* Medium screens (768px to 992px) */
 @media (max-width: 992px) and (min-width: 769px) {
   .intro-container {
     gap: 80px;
@@ -683,11 +678,10 @@ header p {
   }
   
   .full-width-box {
-    padding: 80px 15px 35px 15px; /* increase top padding to clear absolute header */
+    padding: 80px 15px 35px 15px; 
   }
 }
 
-/* Small-medium screens (576px to 768px) */
 @media (max-width: 768px) and (min-width: 577px) {
   body { padding-bottom: 140px; }
   .intro-container {
@@ -696,10 +690,8 @@ header p {
     padding: 100px 30px 0;
     text-align: center;
   }
-  /* Ensure code/header stack above image and prevent overlap */
   header { order: 1; width: 100%; }
   .profile-img-container { order: 2; }
-  /* Resize/reposition decorative pink circle to avoid covering code */
   .profile-img-container::after {
     display: block;
     width: 260px;
@@ -707,7 +699,6 @@ header p {
     bottom: -20px;
     right: -30px;
   }
-  /* Center the code snippet and add space before image */
   .code-box { display: block; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
   
   header h1 {
@@ -746,7 +737,7 @@ header p {
   }
   
   .full-width-box {
-    padding: 70px 15px 30px 15px; /* increase top padding to clear absolute header */
+    padding: 70px 15px 30px 15px; 
     font-size: 0.85em;
   }
   
@@ -788,7 +779,6 @@ header p {
   }
 }
 
-/* Small screens (up to 576px) */
 @media (max-width: 576px) {
   body { padding-bottom: 140px; }
   nav {
@@ -809,10 +799,8 @@ header p {
     padding: 80px 20px 0;
     text-align: center;
   }
-  /* Ensure proper stacking and remove overlap on very small screens */
   header { order: 1; width: 100%; }
   .profile-img-container { order: 2; }
-  /* Resize/reposition decorative pink circle to avoid covering code */
   .profile-img-container::after {
     display: block;
     width: 230px;
@@ -820,7 +808,6 @@ header p {
     bottom: -15px;
     right: -20px;
   }
-  /* Center the code snippet and add space before image */
   .code-box { display: block; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
 
   header h1 {
@@ -864,7 +851,7 @@ header p {
   }
   
   .full-width-box {
-    padding: 60px 12px 25px 12px; /* increase top padding to clear absolute header */
+    padding: 60px 12px 25px 12px; 
     font-size: 0.8em;
   }
   
@@ -930,7 +917,6 @@ header p {
   }
 }
 
-/* Extra small screens (up to 400px) */
 @media (max-width: 400px) {
   .intro-container {
     padding: 70px 15px 0;
@@ -965,7 +951,7 @@ header p {
   }
   
   .full-width-box {
-    padding: 55px 10px 20px 10px; /* increase top padding to clear absolute header */
+    padding: 55px 10px 20px 10px; 
     font-size: 0.75em;
   }
   
