@@ -55,6 +55,7 @@ body {
   color: var(--text-white);
     font-family: 'Manrope', sans-serif;
     font-weight: 300;
+    font-size: 18px;
     margin: 0;
     min-height: 100vh;
     text-align: left;
@@ -206,7 +207,7 @@ header .hello-color {
 header p {
   margin: 0.5em 0;
   font-weight: 100;
-  font-size: 1.6em;
+  font-size: 1.8em;
   line-height: 1.6;
 }
 
@@ -225,7 +226,7 @@ header p {
   
   .intro-text {
   margin-bottom: 40px;
-    font-size: 1.6em;
+    font-size: 1.8em;
     line-height: 1.6;
     font-weight: 100;
   }
@@ -280,7 +281,7 @@ header p {
     margin-top: 10px;
     display: inline-block;
     line-height: 1.5;
-  font-size: 0.7em;
+  font-size: 0.8em;
   box-shadow: 0 0 12px var(--code-shadow);
   position: relative;
     font-family: 'Google Sans Code', monospace;
@@ -319,7 +320,7 @@ header p {
   color: var(--text-white);
   font-family: 'Google Sans Code', monospace;
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 1.3;
   position: relative;
   overflow: hidden;
@@ -432,7 +433,7 @@ header p {
   margin: 100px auto 0;
   padding: 40px 50px;
   color: var(--text-white);
-    font-size: 1.3em;
+    font-size: 1.4em;
     line-height: 1.6em;      
   position: relative;
 }
@@ -560,7 +561,7 @@ header p {
 
 .hobby-card h3 {
   color: var(--primary-pink);
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-bottom: 15px;
   font-weight: bold;
 }
@@ -568,7 +569,7 @@ header p {
 .hobby-card p {
   color: #ffffff;
   line-height: 1.6;
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
 
@@ -606,7 +607,7 @@ header p {
 .project-header h3,
 .project-header h2 {
   color: var(--primary-pink);
-  font-size: 1.8em;
+  font-size: 2em;
   font-weight: bold;
   margin: 0 0 8px 0;
 }
@@ -623,7 +624,7 @@ header p {
   color: var(--text-white);
   line-height: 1.6;
   margin-bottom: 70px;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .project-links {
@@ -641,7 +642,7 @@ header p {
   border-radius: 25px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .project-link:hover { background: white; color: var(--primary-pink); transform: none; text-decoration: underline; }
@@ -712,7 +713,7 @@ header p {
 
 .contact-item h3 {
   color: var(--primary-pink);
-  font-size: 1.8em;
+  font-size: 2em;
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -720,7 +721,7 @@ header p {
 .contact-item p {
   color: #ffffff;
   line-height: 1.6;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 25px;
 }
 
@@ -732,7 +733,7 @@ header p {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .contact-link:hover {
