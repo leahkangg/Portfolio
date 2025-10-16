@@ -19,6 +19,7 @@ Talking to classmates about class material, assignment requirements, etc. is a g
 - 1/1 Passes validation checks
 - 2/2 Embraces spirit of the assignment
 
+
 2. What (a) basic features, (b) CSS features, and (c) advanced features did you include in your portfolio?
 
 (a) Basic features
@@ -40,6 +41,7 @@ Talking to classmates about class material, assignment requirements, etc. is a g
     - Creating a more complex page layout- navigation bar
 
 
+
 3. Did you ignore any of the warnings or errors presented by the accessibility checker? If so, why does this not seem like an accessibility concern? If it's useful, you can consolidate your thoughts on multiple warnings/errors if the rationale is similar.
     Yes. I got the same/similar accessibility and same CSS errors per each HTML file.
 
@@ -54,7 +56,7 @@ Talking to classmates about class material, assignment requirements, etc. is a g
         I ignored this because images are simple, long descriptions are not necessary.
    
     - 1.3.1 Info and Relationships, dir attribute / Unicode LRM/RLM may be required (index.html, about.html, projects.html, personal.html, contact.html, sitemap.html)
-        All content is in English
+        All content is in English.
 
     - 1.3.1 Info and Relationships, Visual lists may not be properly marked (index.html, about.html, projects.html, personal.html, contact.html, sitemap.html)
         My navigation is correctly marked as nav > ul > li > a, and grids are labeled with heading and paragraph.
@@ -90,7 +92,7 @@ Talking to classmates about class material, assignment requirements, etc. is a g
         Heading follow proper hierarchy.
     
     - 3.1.2 Language Parts (index.html, about.html, projects.html, personal.html, contact.html, sitemap.html)
-        Pages are in English
+        Pages are in English.
     
     - 3.2.3 Consistent Navigation (index.html, about.html, projects.html, personal.html, contact.html, sitemap.html)
         Navigation order and layout are consistent.
@@ -119,6 +121,8 @@ Talking to classmates about class material, assignment requirements, etc. is a g
 
     - The value text is deprecated (line 196)
         I ignored this because it's widely supported and necessary for gradient text. The newer alternative still requires the -webkit- prefix.
+
+
 
 4. How long, in hours, did it take you to complete this assignment?
     - I worked on this assignment for around 15 or more hours.
