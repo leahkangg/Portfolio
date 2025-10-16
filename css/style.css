@@ -538,7 +538,7 @@ header p {
 }
 
 .hobby-image img[src*="watercolor"] {
-  object-position: top 40%;
+  object-position: 0% 40%;
 }
 
 .hobby-card {
