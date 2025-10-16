@@ -41,7 +41,7 @@ Talking to classmates about class material, assignment requirements, etc. is a g
 
 
 3. Did you ignore any of the warnings or errors presented by the accessibility checker? If so, why does this not seem like an accessibility concern? If it's useful, you can consolidate your thoughts on multiple warnings/errors if the rationale is similar.
-    Yes. I got the same/similar accessibility and CSS errors per each HTML file.
+    Yes. I got the same/similar accessibility and same CSS errors per each HTML file.
 
     Accessibility Errors:
     - 1.1.1 Non-text content, Alt text does not convey same info (index.html, about.html, personal.html)
