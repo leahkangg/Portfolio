@@ -13,11 +13,16 @@ EMAIL: leahyk@uci.edu
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Leah Kang's Portfolio - Informatics Student">
   
+  <!-- preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
   <title>Leah Kang's Portfolio</title>
@@ -29,24 +34,24 @@ EMAIL: leahyk@uci.edu
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- main navigation menu -->
-<nav aria-label="Main navigation">
-  <details id="run-section">
-    <summary>
+<nav aria-label="Main navigation" id="run-section">
+  <div class="nav-top-row">
+    <button id="run-btn" class="run-btn" aria-expanded="false" aria-controls="nav-links">
       <span class="material-icons play-icon">play_circle_filled</span>
       <strong>run</strong>
-    </summary>
-    <ul>
-      <li><a href="about.html">about</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="personal.html">personal</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </details>
-  
-  <!-- logo -->
-  <a href="index.html" aria-label="Home">
-    <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
-  </a></nav>
+    </button>
+    <!-- logo -->
+    <a href="index.html" aria-label="Home">
+      <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
+    </a>
+  </div>
+  <ul id="nav-links" class="nav-links">
+    <li><a href="about.html">about</a></li>
+    <li><a href="projects.html">projects</a></li>
+    <li><a href="personal.html">personal</a></li>
+    <li><a href="contact.html">contact</a></li>
+  </ul>
+</nav>
 
  
  
@@ -64,18 +69,10 @@ EMAIL: leahyk@uci.edu
       <!-- code snippet with explore link -->
       <div class="code-box">
         <div class="code-header">python3</div>
-        <span class="hello-color"><em># hello there! </em></span>
-        <p><span class="code-keyword">if</span> <span class="code-variable">your_interest</span> <span class="code-keyword">in</span> [ </p>
-        <p class="indented"><span class="code-string">"informatics"</span>, </p>
-        <p class="indented"><span class="code-string">"organizations and IT"</span>,</p>
-        <p class="indented"><span class="code-string">"backend software"</span>,</p>
-        <p class="indented"><span class="code-string">"design"</span></p>
-        <p class="indented">] :</p>
-
-        <p class="indented">
+        <div id="typed-code"></div>
+        <p class="indented" id="explore-line" style="visibility: hidden;">
           <button id="explore-link" type="button" class="explore-link"><span class="code-variable">explore</span> = <span class="code-boolean">True</span></button>
         </p>
-        
       </div>
       </header>
     
@@ -90,21 +87,139 @@ EMAIL: leahyk@uci.edu
 
   
 
-  <!-- JavaScript for nav -->
+  <!-- JavaScript for typing animation and nav -->
   <script>
+    // typing animation for code box
+    const codeLines = [
+      { html: '<span class="hello-color"><em># hello there! </em></span>', raw: '# hello there! ' },
+      { html: '<span class="code-keyword">if</span> <span class="code-variable">your_interest</span> <span class="code-keyword">in</span> [', raw: 'if your_interest in [' },
+      { html: '    <span class="code-string">"backend software"</span>,', raw: '    "backend software",' },
+      { html: '    <span class="code-string">"informatics"</span>,', raw: '    "informatics",' },
+      { html: '    <span class="code-string">"organizations and IT"</span>,', raw: '    "organizations and IT",' },
+      { html: '    <span class="code-string">"design"</span>', raw: '    "design"' },
+      { html: '    ] :', raw: '    ] :' }
+    ];
+
+    const typedCode = document.getElementById("typed-code");
+    const exploreLine = document.getElementById("explore-line");
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentLineEl = null;
+
+    function typeNextChar() {
+      if (lineIndex >= codeLines.length) {
+        exploreLine.style.visibility = "visible";
+        return;
+      }
+
+      const line = codeLines[lineIndex];
+
+      if (charIndex === 0) {
+        currentLineEl = document.createElement("p");
+        if (lineIndex === 0) {
+          // no indent for comment line
+        } else if (lineIndex >= 2) {
+          currentLineEl.className = "indented";
+        }
+        typedCode.appendChild(currentLineEl);
+      }
+
+      charIndex++;
+      // Build the displayed text by taking raw chars up to charIndex, then map to styled HTML
+      const visibleRaw = line.raw.substring(0, charIndex);
+      // Replace the raw substring with the corresponding styled HTML, truncated
+      currentLineEl.innerHTML = buildStyledSubstring(line, charIndex) + '<span class="typing-cursor">|</span>';
+
+      if (charIndex < line.raw.length) {
+        setTimeout(typeNextChar, 45);
+      } else {
+        // Remove cursor from finished line
+        currentLineEl.innerHTML = line.html;
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(typeNextChar, 150);
+      }
+    }
+
+    function buildStyledSubstring(line, count) {
+      // Create a temp element with full HTML, extract text, then truncate
+      const temp = document.createElement("div");
+      temp.innerHTML = line.html;
+      const fullText = temp.textContent;
+      const partial = fullText.substring(0, count);
+
+      // Rebuild with styling by walking through the HTML structure
+      let result = "";
+      let textSoFar = 0;
+      const walker = document.createTreeWalker(temp, NodeFilter.SHOW_TEXT);
+      let node;
+      const fragments = [];
+
+      // Collect all text nodes with their parent styling
+      while (node = walker.nextNode()) {
+        fragments.push({ text: node.textContent, parent: node.parentElement });
+      }
+
+      for (const frag of fragments) {
+        if (textSoFar >= count) break;
+        const remaining = count - textSoFar;
+        const sliced = frag.text.substring(0, remaining);
+        textSoFar += sliced.length;
+
+        if (frag.parent === temp) {
+          result += sliced;
+        } else {
+          // Wrap in parent tags
+          const clone = frag.parent.cloneNode(false);
+          clone.textContent = sliced;
+          result += clone.outerHTML;
+        }
+      }
+      return result;
+    }
+
+    // Start typing after a brief delay
+    setTimeout(typeNextChar, 500);
+
+    // Nav menu logic
     const exploreLink = document.getElementById("explore-link");
-    const runMenu = document.querySelector("nav details");
-  
-    // open navigation menu when explore button is clicked
-    exploreLink.addEventListener("click", () => {
-      runMenu.open = true;
-      runMenu.scrollIntoView({ behavior: "smooth", block: "start" });
+    const runBtn = document.getElementById("run-btn");
+    const navLinks = document.getElementById("nav-links");
+    const runSection = document.getElementById("run-section");
+    let menuOpen = false;
+
+    function toggleMenu(open) {
+      menuOpen = open;
+      runBtn.setAttribute("aria-expanded", open);
+      const items = navLinks.querySelectorAll("li");
+
+      if (open) {
+        navLinks.classList.add("open");
+        items.forEach((item, i) => {
+          item.style.transitionDelay = `${i * 80}ms`;
+          item.classList.add("visible");
+        });
+      } else {
+        items.forEach((item, i) => {
+          item.style.transitionDelay = `${(items.length - 1 - i) * 60}ms`;
+          item.classList.remove("visible");
+        });
+        setTimeout(() => navLinks.classList.remove("open"), items.length * 60 + 200);
+      }
+    }
+
+    runBtn.addEventListener("click", () => {
+      toggleMenu(!menuOpen);
     });
-    
-    // close  menu when clicking outside of it
+
+    exploreLink.addEventListener("click", () => {
+      toggleMenu(true);
+      runSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
     document.addEventListener("click", (event) => {
-      if (runMenu.open && !runMenu.contains(event.target) && event.target !== exploreLink) {
-        runMenu.open = false;
+      if (menuOpen && !runSection.contains(event.target) && event.target !== exploreLink) {
+        toggleMenu(false);
       }
     });
   </script>

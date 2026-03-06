@@ -9,11 +9,17 @@
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Leah Kang's Personal Page - Portfolio">
   
+  <!-- preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
   <title>Personal — Leah Kang</title>
 </head>
@@ -24,24 +30,23 @@
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- main navigation menu -->
-<nav aria-label="Main navigation">
-  <details id="run-section">
-    <summary>
+<nav aria-label="Main navigation" id="run-section">
+  <div class="nav-top-row">
+    <button id="run-btn" class="run-btn" aria-expanded="false" aria-controls="nav-links">
       <span class="material-icons play-icon">play_circle_filled</span>
       <strong>run</strong>
-    </summary>
-    <ul>
-      <li><a href="about.html">about</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="personal.html" aria-current="page">personal</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </details>
-  
-  <!-- logo -->
-  <a href="index.html" aria-label="Home">
-    <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
-  </a></nav>
+    </button>
+    <a href="index.html" aria-label="Home">
+      <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
+    </a>
+  </div>
+  <ul id="nav-links" class="nav-links">
+    <li><a href="about.html">about</a></li>
+    <li><a href="projects.html">projects</a></li>
+    <li><a href="personal.html" aria-current="page">personal</a></li>
+    <li><a href="contact.html">contact</a></li>
+  </ul>
+</nav>
 
  
  
@@ -64,7 +69,7 @@
               <!-- graphic design  -->
               <div class="hobby-card">
                 <h3>Graphic Design</h3>
-                <p>creating digital art and visual designs using Adobe Illustrator. focused on aestheticizing personal interests and typography.</p>
+                <p>creating digital art and visual designs using Adobe Illustrator. focused on aestheticizing personal interests and typography</p>
                 <div class="hobby-image">
                   <img src="images/monogram.svg" alt="LYK Monogram graphic design work.">
                 </div>
@@ -73,7 +78,7 @@
               <!-- watercoloring  -->
               <div class="hobby-card">
                 <h3>Watercoloring</h3>
-                <p>realistic watercoloring on gifting cards, bookmarks, and more.</p>
+                <p>realistic watercoloring on gifting cards, bookmarks, and more</p>
                 <div class="hobby-image">
                   <img src="images/watercolor.png" alt="Watercolor art of an eight ball and clovers.">
                 </div>
@@ -82,7 +87,7 @@
               <!-- sliming  -->
               <div class="hobby-card">
                 <h3>Sliming</h3>
-                <p>making and playing with slime for sensory enjoyment.</p>
+                <p>making and playing with slime for sensory enjoyment</p>
                 <div class="hobby-image">
                   <img src="images/slime.jpg" alt="Pink slime on a table.">
                 </div>
@@ -91,9 +96,18 @@
               <!-- cafe hopping  -->
               <div class="hobby-card">
                 <h3>Cafe Hopping</h3>
-                <p>exploring local cafes, trying new coffees/drinks, and spending time with friends/studying.</p>
+                <p>exploring local cafes, trying new coffees/drinks, and spending time with friends/studying</p>
                 <div class="hobby-image">
                   <img src="images/cafe.jpg" alt="Table of three drinks and cookies.">
+                </div>
+              </div>
+
+              <!-- baking -->
+              <div class="hobby-card">
+                <h3>Baking</h3>
+                <p>baking bread, cookies, and pastries for friends and family. experimenting with new recipes and flavors</p>
+                <div class="hobby-image">
+                  <img src="images/baking.jpg" alt="Baking bread, cookies, and pastries.">
                 </div>
               </div>
             </div>
@@ -112,13 +126,27 @@
 
   <!-- JavaScript for nav -->
   <script>
-    const runMenu = document.querySelector("nav details");
-  
-    // close menu when clicking outside of it
-    document.addEventListener("click", (event) => {
-      if (runMenu.open && !runMenu.contains(event.target)) {
-        runMenu.open = false;
+    const runBtn = document.getElementById("run-btn");
+    const navLinks = document.getElementById("nav-links");
+    const runSection = document.getElementById("run-section");
+    let menuOpen = false;
+
+    function toggleMenu(open) {
+      menuOpen = open;
+      runBtn.setAttribute("aria-expanded", open);
+      const items = navLinks.querySelectorAll("li");
+      if (open) {
+        navLinks.classList.add("open");
+        items.forEach((item, i) => { item.style.transitionDelay = `${i * 80}ms`; item.classList.add("visible"); });
+      } else {
+        items.forEach((item, i) => { item.style.transitionDelay = `${(items.length - 1 - i) * 60}ms`; item.classList.remove("visible"); });
+        setTimeout(() => navLinks.classList.remove("open"), items.length * 60 + 200);
       }
+    }
+
+    runBtn.addEventListener("click", () => toggleMenu(!menuOpen));
+    document.addEventListener("click", (event) => {
+      if (menuOpen && !runSection.contains(event.target)) toggleMenu(false);
     });
   </script>
 

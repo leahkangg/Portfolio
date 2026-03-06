@@ -9,11 +9,17 @@
   <meta name="author" content="Leah Kang">
   <meta name="description" content="Leah Kang's Projects - Portfolio">
   
+  <!-- preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- external styles -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
   <title>Projects — Leah Kang</title>
 </head>
@@ -24,24 +30,23 @@
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- main navigation menu -->
-<nav aria-label="Main navigation">
-  <details id="run-section">
-    <summary>
+<nav aria-label="Main navigation" id="run-section">
+  <div class="nav-top-row">
+    <button id="run-btn" class="run-btn" aria-expanded="false" aria-controls="nav-links">
       <span class="material-icons play-icon">play_circle_filled</span>
       <strong>run</strong>
-    </summary>
-    <ul>
-      <li><a href="about.html">about</a></li>
-      <li><a href="projects.html" aria-current="page">projects</a></li>
-      <li><a href="personal.html">personal</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </details>
-  
-  <!-- logo -->
-  <a href="index.html" aria-label="Home">
-    <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
-  </a></nav>
+    </button>
+    <a href="index.html" aria-label="Home">
+      <img src="images/logo.svg" alt="LYK monogram logo." class="nav-logo"><span class="visually-hidden">Home</span>
+    </a>
+  </div>
+  <ul id="nav-links" class="nav-links">
+    <li><a href="about.html">about</a></li>
+    <li><a href="projects.html" aria-current="page">projects</a></li>
+    <li><a href="personal.html">personal</a></li>
+    <li><a href="contact.html">contact</a></li>
+  </ul>
+</nav>
 
  
  
@@ -55,96 +60,86 @@
     <!-- projects grid  -->
     <div class="projects-container">
       <div class="projects-grid">
-        
+
+        <!-- panasonic project -->
+        <a class="project-card project-card-nolink">
+          <div class="project-header">
+            <h2>AI Campaign Optimizer</h2>
+            <div class="project-type">Panasonic — One Media</div>
+            <div class="project-date">Jan 2026 — Present</div>
+          </div>
+          <p class="project-description">AI-driven campaign optimization engine using XGBoost for delivery prediction and real-time placement guidance. Built pre-launch recommendation system and in-flight pacing optimization to maximize impression delivery.</p>
+        </a>
+
+        <!-- lux ai project -->
+        <a href="https://www.luxai.dev/" target="_blank" class="project-card project-card-link">
+          <div class="project-header">
+            <h2>Lux AI</h2>
+            <div class="project-type">No-Code AI Platform</div>
+            <div class="project-date">Jan 2026 — Present</div>
+          </div>
+          <p class="project-description">Built core features for a no-code AI platform with voice agents, real-time chat, RAG knowledge base, and automated workflows. Supporting 10+ active client companies.</p>
+        </a>
+
         <!-- mochaminds project -->
-        <div class="project-card">
+        <a href="https://github.com/BaneBeetle/VenusHacks" target="_blank" class="project-card project-card-link">
           <div class="project-header">
             <h2>MochaMinds</h2>
-            <div class="project-type">AI Study Hub</div>
+            <div class="project-type">AI Study Hub — VenusHacks</div>
+            <div class="project-date">May 2024</div>
           </div>
           <p class="project-description">AI-powered centralized study system to maximize focus and productivity for students.</p>
-          <div class="project-links"> 
-            <a href="https://github.com/BaneBeetle/VenusHacks" target="_blank" class="project-link">
-              <span class="material-icons">code</span>
-              View Code
-            </a>
-          </div>
-        </div>
+        </a>
 
         <!-- pdfrag project -->
-        <div class="project-card">
+        <a href="https://github.com/leahkangg/RAGPDF/blob/main/RAGLLM.py" target="_blank" class="project-card project-card-link">
           <div class="project-header">
             <h2>pdfRAG</h2>
             <div class="project-type">AI Chatbot</div>
+            <div class="project-date">2024</div>
           </div>
           <p class="project-description">PDF-Based Conversational AI with RAG and LangChain for intelligent document interactions.</p>
-          <div class="project-links">
-            <a href="https://github.com/leahkangg/RAGPDF/blob/main/RAGLLM.py" target="_blank" class="project-link">
-              <span class="material-icons">code</span>
-              View Code
-            </a>
-          </div>
-        </div>
+        </a>
 
         <!-- airbnb evaluator project -->
-        <div class="project-card">
+        <a href="https://github.com/leahkangg/AirbnbEstimator" target="_blank" class="project-card project-card-link">
           <div class="project-header">
             <h2>Airbnb Evaluator</h2>
             <div class="project-type">Real Estate Tool</div>
+            <div class="project-date">2023</div>
           </div>
           <p class="project-description">Property Evaluator for real estate investment analysis using data science and market insights.</p>
-          <div class="project-links">
-            <a href="https://github.com/leahkangg/AirbnbEstimator" target="_blank" class="project-link">
-              <span class="material-icons">code</span>
-              View Code
-            </a>
-          </div>
-        </div>
+        </a>
 
         <!-- sp500 forecaster project -->
-        <div class="project-card">
+        <a href="https://github.com/leahkangg/SP500Oracle" target="_blank" class="project-card project-card-link">
           <div class="project-header">
             <h2>S&P500 Forecaster</h2>
             <div class="project-type">ML Model</div>
+            <div class="project-date">2023</div>
           </div>
           <p class="project-description">S&P500 Oracle Price Forecasting Model with Machine Learning for stock market predictions.</p>
-          <div class="project-links">
-            <a href="https://github.com/leahkangg/SP500Oracle" target="_blank" class="project-link">
-              <span class="material-icons">code</span>
-              View Code
-            </a>
-          </div>
-        </div>
+        </a>
 
         <!-- seoulsweets project -->
-        <div class="project-card">
+        <a href="https://leahkangg.github.io/SeoulSweets.github.io/" target="_blank" class="project-card project-card-link">
           <div class="project-header">
             <h2>SeoulSweets</h2>
             <div class="project-type">Web App</div>
+            <div class="project-date">2023</div>
           </div>
           <p class="project-description">Korean dessert themed personality quiz with interactive UX.</p>
-          <div class="project-links">
-            <a href="https://leahkangg.github.io/SeoulSweets.github.io/" target="_blank" class="project-link">
-              <span class="material-icons">launch</span>
-              Live Demo
-            </a>
-          </div>
-        </div>
+        </a>
 
         <!-- anteatercrawler project -->
-        <div class="project-card">
+        <a href="https://github.com/leahkangg/leahkangg-webcrawler" target="_blank" class="project-card project-card-link">
           <div class="project-header">
             <h2>AnteaterCrawler</h2>
             <div class="project-type">Web Scraper</div>
+            <div class="project-date">2024</div>
           </div>
           <p class="project-description">Web crawler for all UCI ICS pages to gather and organize academic information efficiently.</p>
-          <div class="project-links">
-            <a href="https://github.com/leahkangg/leahkangg-webcrawler" target="_blank" class="project-link">
-              <span class="material-icons">code</span>
-              View Code
-            </a>
-          </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -157,13 +152,27 @@
 
   <!-- JavaScript for nav -->
   <script>
-    const runMenu = document.querySelector("nav details");
-  
-    // close menu when clicking outside of it
-    document.addEventListener("click", (event) => {
-      if (runMenu.open && !runMenu.contains(event.target)) {
-        runMenu.open = false;
+    const runBtn = document.getElementById("run-btn");
+    const navLinks = document.getElementById("nav-links");
+    const runSection = document.getElementById("run-section");
+    let menuOpen = false;
+
+    function toggleMenu(open) {
+      menuOpen = open;
+      runBtn.setAttribute("aria-expanded", open);
+      const items = navLinks.querySelectorAll("li");
+      if (open) {
+        navLinks.classList.add("open");
+        items.forEach((item, i) => { item.style.transitionDelay = `${i * 80}ms`; item.classList.add("visible"); });
+      } else {
+        items.forEach((item, i) => { item.style.transitionDelay = `${(items.length - 1 - i) * 60}ms`; item.classList.remove("visible"); });
+        setTimeout(() => navLinks.classList.remove("open"), items.length * 60 + 200);
       }
+    }
+
+    runBtn.addEventListener("click", () => toggleMenu(!menuOpen));
+    document.addEventListener("click", (event) => {
+      if (menuOpen && !runSection.contains(event.target)) toggleMenu(false);
     });
   </script>
 
